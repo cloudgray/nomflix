@@ -1,6 +1,8 @@
 # Nomflix
 
-Learning React adn ES6 by building a Movie Discovery App.
+Learning React and ES6 by building a Movie Discovery App.
+
+(Clone code from Nomad Coders' lecture)
 
 ## Screens
 
@@ -18,4 +20,4 @@ Learning React adn ES6 by building a Movie Discovery App.
 - [x] Aring Today (TV)
 - [x] TV Show Detail
 - [x] Movie Detail
-- [ ] Search (Movie, TV)
+- [x] Search (Movie, TV)
