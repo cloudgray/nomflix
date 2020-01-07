@@ -1,7 +1,6 @@
 import React from "react";
 import TVPresenter from "./TVPresenter";
 import { tvApi } from "api";
-import Message from "../../Components/Message";
 
 export default class extends React.Component {
   state = {
