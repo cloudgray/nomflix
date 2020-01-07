@@ -51,7 +51,9 @@ const Title = styled.h3`
   margin-bottom: 20px;
 `;
 
-const ItemContainer = styled.div``;
+const ItemContainer = styled.div`
+  margin: 20px 0;
+`;
 
 const Item = styled.span``;
 
@@ -59,7 +61,12 @@ const Divider = styled.span`
   margin: 0 10px;
 `;
 
-const Overview = styled.p``;
+const Overview = styled.p`
+  font-size: 12;
+  opacity: 0.7;
+  line-height: 2;
+  width: 50%;
+`;
 
 const DetailPresenter = ({ result, loading, error }) =>
   loading ? (
@@ -98,13 +105,14 @@ const DetailPresenter = ({ result, loading, error }) =>
             <Divider>▪</Divider>
             <Item>
               {result.genres &&
-                result.map((genre, index) =>
+                result.genres.map((genre, index) =>
                   index === result.genres.length - 1
                     ? genre.name
                     : `${genre.name} / `
                 )}
             </Item>
           </ItemContainer>
+          <Overview>{result.overview}</Overview>
         </Data>
       </Content>
     </Container>
