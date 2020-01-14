@@ -2,6 +2,7 @@ import React from "react";
 import Proptypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
+import YouTube from "react-youtube";
 import Loader from "Components/Loader";
 import Message from "Components/Message";
 
@@ -35,7 +36,7 @@ const Content = styled.div`
 `;
 
 const Cover = styled.div`
-  width: 30%;
+  width: 40%;
   background-image: url(${props => props.bgImage});
   background-position: center center;
   background-size: cover;
@@ -67,8 +68,21 @@ const Overview = styled.p`
   font-size: 12;
   opacity: 0.7;
   line-height: 2;
-  width: 50%;
+  width: 70%;
 `;
+
+const Video = styled(YouTube)`
+  width: 70%;
+  height: 400px;
+`;
+
+const youtubeOpts = {
+  height: "100%",
+  width: "100%",
+  playerVars: {
+    autoplay: 1
+  }
+};
 
 const DetailPresenter = ({ result, loading, error }) =>
   loading ? (
@@ -127,6 +141,10 @@ const DetailPresenter = ({ result, loading, error }) =>
             </Item>
           </ItemContainer>
           <Overview>{result.overview}</Overview>
+          <Video
+            videoId={result.videos.results[0].key}
+            opts={youtubeOpts}
+          ></Video>
         </Data>
       </Content>
     </Container>
